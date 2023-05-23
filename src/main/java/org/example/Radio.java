@@ -2,10 +2,14 @@ package org.example;
 
 public class Radio {
     private int radioID;
-    public int volume;
+    private int volume;
 
     public int getRadioID() {
         return radioID;
+    }
+
+    public int getVolume() {
+        return volume;
     }
 
     public void setRadioID(int newRadioID) {
@@ -31,6 +35,17 @@ public class Radio {
             radioID = getRadioID() - 1;
         } else
             setRadioID(9);
+    }
+
+
+    public void setVolume(int newVolume) {
+        if (newVolume < 0) {
+            return;
+        }
+        if (newVolume > 100) {
+            return;
+        }
+        volume = newVolume;
     }
 
     public void increaseVolume() {
