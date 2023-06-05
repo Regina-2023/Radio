@@ -43,11 +43,11 @@ public class RadioTest {
 
     @Test
     public void shouldSetRadioMax() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(20);
 
-        radio.setRadioID(9);
+        radio.setRadioID(19);
 
-        int expected = 9;
+        int expected = 19;
         int actual = radio.getRadioID();
 
         Assertions.assertEquals(expected, actual);
@@ -55,11 +55,11 @@ public class RadioTest {
 
     @Test
     public void shouldSetRadioLessMax() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(20);
 
-        radio.setRadioID(8);
+        radio.setRadioID(18);
 
-        int expected = 8;
+        int expected = 18;
         int actual = radio.getRadioID();
 
         Assertions.assertEquals(expected, actual);
@@ -67,9 +67,9 @@ public class RadioTest {
 
     @Test
     public void shouldSetRadioAboveMax() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(20);
 
-        radio.setRadioID(10);
+        radio.setRadioID(20);
 
         int expected = 0;
         int actual = radio.getRadioID();
