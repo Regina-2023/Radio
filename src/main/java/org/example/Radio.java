@@ -3,6 +3,15 @@ package org.example;
 public class Radio {
     private int radioID;
     private int volume;
+    private int maxStation;
+
+    public Radio() {
+        this.maxStation = 9;
+    }
+
+    public Radio(int stationsCount) {
+        this.maxStation = stationsCount - 1;
+    }
 
     public int getRadioID() {
         return radioID;
@@ -16,7 +25,7 @@ public class Radio {
         if (newRadioID < 0) {
             return;
         }
-        if (newRadioID > 9) {
+        if (newRadioID > maxStation) {
             return;
         }
         radioID = newRadioID;
@@ -24,7 +33,7 @@ public class Radio {
 
 
     public void nextRadioID() {
-        if (radioID < 9) {
+        if (radioID < maxStation) {
             radioID = getRadioID() + 1;
         } else
             setRadioID(0);
@@ -34,7 +43,7 @@ public class Radio {
         if (radioID > 0) {
             radioID = getRadioID() - 1;
         } else
-            setRadioID(9);
+            setRadioID(maxStation);
     }
 
 
